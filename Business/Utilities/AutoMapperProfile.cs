@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Business.DTOs.ProductsDTOs;
+using DataAccess.DAO;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ namespace Business.Utilities
 		public AutoMapperProfile() 
 		{
 			CreateMap<Product, ProductDTO>();
-			CreateMap<ProductCreationDTO, Product>();
+			CreateMap<ProductDTO, Product>();
+			CreateMap<ProductDAO, Product>();
 		}
 	}
 }

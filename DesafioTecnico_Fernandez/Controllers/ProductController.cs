@@ -42,16 +42,31 @@ namespace DesafioTecnico_Fernandez.Controllers
 		}
 
 		[HttpPost]
-		public async Task<ActionResult> PostProduct(ProductCreationDTO productCreationDTO)
+		public async Task<ActionResult<ProductDTO>> PostProduct(ProductDTO productCreationDTO)
 		{
-			var resultado = await productBusiness.CreateProduct(productCreationDTO);
+			var product = await productBusiness.CreateProduct(productCreationDTO);
 
-			if (!resultado)
+			if (product == null)
 			{
-				return BadRequest("Error al crearun producto");
+				return BadRequest("Error al crear un producto");
 			}
 
-			return Ok(resultado);
+			return Ok(product);
+		}
+
+		[HttpPut("{id:int}")]
+		public async Task<ActionResult<ProductDTO>> PutProduct(ProductDTO productDTO)
+		{
+			var product = await productBusiness.UpdateProduct(productDTO);
+
+			return Ok(product);
+		}
+
+		[HttpDelete]
+		public async Task<ActionResult> DeleteProductById(int id)
+		{
+			var product = await productBusiness.DeleteProduct(id);
+			return Ok($"El producto de id {id} fue eliminado exitosamente");
 		}
 	}
 }

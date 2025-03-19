@@ -1,6 +1,7 @@
 using Business;
 using Business.Utilities;
 using DataAccess;
+using DataAccess.DAO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 builder.Services.AddScoped<ProductBusiness>();
+builder.Services.AddScoped<ProductDAO>();
 
 //Implementacion de automapper
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
