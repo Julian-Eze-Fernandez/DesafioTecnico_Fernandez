@@ -18,55 +18,77 @@ namespace DesafioTecnico_Fernandez.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<ProductDTO>>> GetProductAll()
 		{
-			var products = await productBusiness.ListProducts();
-
-			if (products == null || products.Count == 0) 
+			try
 			{
-				return BadRequest("No hay productos cargados en el sistema.");
-			}
+				var products = await productBusiness.ListProducts();
 
-			return Ok(products);
+				return Ok(products);
+			}
+			catch (InvalidOperationException x)
+			{
+				return BadRequest(x.Message);
+			}
 		}
 
-		[HttpGet("{id:int}")]
+		[HttpGet("{id}")]
 		public async Task<ActionResult<ProductDTO>> GetProductById(int id)
 		{
-			var product = await productBusiness.ProductById(id);
-
-			if (product == null) 
+			try
 			{
-				return BadRequest($"No existe el producto con el identificador {id}");
-			}
+				var product = await productBusiness.ProductById(id);
 
-			return Ok(product);
+				return Ok(product);
+			}
+			catch (InvalidOperationException x)
+			{
+				return BadRequest(x.Message);
+			}
 		}
 
 		[HttpPost]
 		public async Task<ActionResult<ProductDTO>> PostProduct(ProductDTO productCreationDTO)
 		{
-			var product = await productBusiness.CreateProduct(productCreationDTO);
-
-			if (product == null)
+			try
 			{
-				return BadRequest("Error al crear un producto");
-			}
+				var product = await productBusiness.CreateProduct(productCreationDTO);
 
-			return Ok(product);
+				return Ok(product);
+			}
+			catch (InvalidOperationException x)
+			{
+				return BadRequest(x.Message);
+			}
 		}
 
 		[HttpPut("{id:int}")]
 		public async Task<ActionResult<ProductDTO>> PutProduct(ProductDTO productDTO)
 		{
-			var product = await productBusiness.UpdateProduct(productDTO);
+			try
+			{
+				var product = await productBusiness.UpdateProduct(productDTO);
 
-			return Ok(product);
+				return Ok(product);
+			}
+			catch (InvalidOperationException x)
+			{
+				return BadRequest(x.Message);
+			}
+
 		}
 
 		[HttpDelete]
 		public async Task<ActionResult> DeleteProductById(int id)
 		{
-			var product = await productBusiness.DeleteProduct(id);
-			return Ok($"El producto de id {id} fue eliminado exitosamente");
+			try
+			{
+				var product = await productBusiness.DeleteProduct(id);
+				return Ok($"El producto de id {id} fue eliminado exitosamente");
+			}
+			catch (InvalidOperationException x)
+			{
+				return BadRequest(x.Message);
+			}
+
 		}
 	}
 }

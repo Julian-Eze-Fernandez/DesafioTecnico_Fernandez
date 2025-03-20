@@ -47,6 +47,7 @@ namespace Business
 		public async Task<bool> DeleteProduct(int id)
 		{
 			var product = await productDao.Delete(id);
+
 			return true;
 		}
 
