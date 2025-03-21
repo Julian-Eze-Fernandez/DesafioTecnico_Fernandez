@@ -106,5 +106,8 @@ Este endpoint permite eliminar un producto de la base de datos según su ID. Aqu
 ## Pruebas con Postman
 Este proyecto cuenta con una coleccion de Postman con pruebas automatizadas. Para eso debe:
 - Dirigirse a Postman.
-- Importar el archivo postman_collection.json incluido en el repositorio.
+- Importar el archivo API Products.postman_collection.json incluido en el repositorio (este archivo contiene la coleccion de request).
+- Importar el archivo Prod.postman_environment.json incluido en el repositorio (este archivo contiene las variables de retorno).
+- Cambiar el valor de la variable "BaseURL" por la url de su localhost.
+- Cambiar el valor de la variable "IDProduct" por el id del nuevo producto generado.
 - Ejecutar las pruebas para verificar el funcionamiento de la API.
