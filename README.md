@@ -1,5 +1,5 @@
 # Prueba Tecnica "API de Productos"
-Desarrollador: Julian Fernandez
+Desarrollador: Julian Fernandez.
 Tecnologías utilizadas: .NET 8.0, Entity Framework Core, SQLite, AutoMapper, Swagger, Postman.
 Descripción: API RESTful para la gestión de productos con operaciones CRUD y validaciones. 
 
@@ -15,7 +15,7 @@ Ejecute el siguiente comando en la terminal para instalar automaticamente las de
 dotnet restore
 ```
 
-###Intrucciones de Instalación
+### Intrucciones de Instalación
 Antes de ejecutar el proyecto, verifica tener instalado en tu maquina:
 - .NET SDK 8.0
 - Postman
@@ -55,7 +55,7 @@ En caso de que no existieran productos cargados en el sistema, se devolvera una 
 ### GET /api/products/{id}
 Este metodo busca un producto en particular el cual se obtiene a traves de su identificador, solo se debe ingresar el **identificador** del producto que se quiere obtener y el sistema lo buscara. En caso de no existir dicho producto se le devolvera el mensaje al usuario `"No se encontro el producto con el identificador (id)"`.
 
-###POST /api/products
+### POST /api/products
 Este endpoint le permite al usuario ingresar los datos del producto a crear y posteriormente agregarlo a la base de datos. Aqui se realizaron varias validaciones, como por ejemplo:
 - El nombre del producto tiene una longitud minima de 3 caracteres.
 - El nombre del producto es obligatorio.
@@ -100,7 +100,7 @@ La estructura del JSON que se presenta es identica al del metodo POST pero modif
 ```
 En caso que se quieran ingresar valores no permitidos como el nombre de otro producto, valores negativos en la cantidad o en el precio, la respuesta a la solicitud sera un BadRequest con un mensaje personalizado en cada caso.
 
-###DELETE /api/products
+### DELETE /api/products
 Este endpoint permite eliminar un producto de la base de datos según su ID. Aqui el usuario ingresa el identiicador del producto a eliminar y si este mismo existe se borrara de la base de datos al ejecutar el metodo, en caso contrario se le devolvera un mensaje "No existe el producto con id (numero de id)".
 
 ## Pruebas con Postman
