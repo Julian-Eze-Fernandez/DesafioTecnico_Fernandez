@@ -1,7 +1,17 @@
 # Prueba Tecnica "API de Productos"
-Desarrollador: Julian Fernandez.
-Tecnologías utilizadas: .NET 8.0, Entity Framework Core, SQLite, AutoMapper, Swagger, Postman.
-Descripción: API RESTful para la gestión de productos con operaciones CRUD y validaciones. 
+### 📌 Desarrollador: 
+**Julian Fernandez**
+
+### 🛠️ Tecnologías utilizadas: 
+- .NET 8.0 
+- Entity Framework Core
+- SQLite
+- AutoMapper
+- Swagger
+- Postman
+
+###  📖 Descripción: 
+API RESTful para la gestión de productos con operaciones CRUD y validaciones. 
 
 Para este proyecto se utilizo arquitectura en capas y los siguientes paquetes Nuget:
 - AutoMapper
