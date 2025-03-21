@@ -1,4 +1,4 @@
-# Prueba Tecnica "API de Productos"
+# Desafio Tecnico "API de Productos"
 ### 📌 Desarrollador: 
 **Julian Fernandez**
 
@@ -13,7 +13,20 @@
 ###  📖 Descripción: 
 API RESTful para la gestión de productos con operaciones CRUD y validaciones. 
 
-Para este proyecto se utilizo arquitectura en capas y los siguientes paquetes Nuget:
+### 📂 Estructura del Proyecto
+📦 DesafioTecnico_Fernandez 
+├── 📁 Business # Capa de lógica de negocio 
+│ ├── 📁 DTOs
+│ ├── 📁 Utilities
+├── 📁 DataAccess # Capa de acceso a datos 
+│ ├── 📁 DAO
+│ ├── 📁 Migrations
+├── 📁 Domain # Capa de dominio 
+│ ├── 📁 Entities
+├── 📁 DesafioTecnico_Fernandez # Proyecto principal (API) 
+│ ├── 📁 Controllers
+
+Para este proyecto se utilizaron los siguientes paquetes NuGet:
 - AutoMapper
 - Microsoft.EntityFrameworkCore.Design
 - Microsoft.EntityFrameworkCore.Sqlite
@@ -83,7 +96,7 @@ Asi se le presentara al usuario el JSON a llnear con la informacion:
   "quantity": 0
 }
 ```
-y asi seria un ejemplode como debe quedar al completarse:
+y asi seria un ejemplo de como debe quedar al completarse:
 
 ```json
 {
