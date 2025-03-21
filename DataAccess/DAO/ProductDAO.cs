@@ -94,7 +94,7 @@ namespace DataAccess.DAO
 
 			}
 
-			var producExists = await context.Products.AnyAsync(x => x.Name == product.Name);
+			var producExists = await context.Products.AnyAsync(x => x.Name == product.Name && x.Id	!= product.Id);
 
 			if (producExists)
 			{
